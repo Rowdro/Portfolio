@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2 class="logo">Rowdro</h2>
+        <ul>
+            <li><a href="#home" class="active"><b>Home</b></a></li>
+            <li><a href="#skills"><b>Skills</b></a></li>
+            <li><a href="#projects"><b>Projects</b></a></li>
+            <li><a href="#about"><b>About</b></a></li>
+            <li><a href="#contact"><b>Contact</b></a></li>
+        </ul>
+    </nav>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-container"> <!-- Flex container -->
+
+        <!-- HERO IMAGE - Right side -->
+        <div class="hero-image">
+            <img src="logo.jpg" alt="Rowdro Image">
+        </div>
+
+        <!-- HERO TEXT - Left side -->
+        <div class="hero-text">
+            <h1 class="fade-in">Hi, I'm <span>Rowdro</span></h1>
+            <div class="wrapper">
+                <h1 class="title">
+                    I am a
+                    <span></span>
+                </h1>
+            </div>
+            <a href="#projects" class="btn fade-in">My Projects</a>
+            <a href="#hire me" class="btn fade-in">Hire Me</a>
+
+            <!-- SOCIAL ICONS -->
+            <div class="social-icons fade-in">
+                <a href="https://www.facebook.com/rowdro.mrong.1" target="_blank" class="social-icon fb">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon ig">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                  <a href="https://x.com" target="_blank" class="social-icon x">
+                    <i class=" fab fa-twitter"></i>
+             </a>
+                <a href="https://github.com" target="_blank" class="social-icon gh">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+        <!-- ABOUT -->
+<!-- <section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            I'm Rowdro, a frontend learner with experience in UI/UX, digital marketing,
+            and product listing. I also have basic knowledge of Java, JavaScript, 
+            and Python. I enjoy learning new technologies and building clean and modern web designs.
+        </p>
+    </div>
+</section> -->
+
+<section class="about" id="about">
+    <div class="container">
+
+        <div class="section-text">
+            <h2 class="section-title">About Me</h2>
+
+            <p class="about-description">
+                Hi, I'm Rowdro — a developer who loves creating clean, modern, 
+                and visually impactful web experiences. I enjoy working with UI, animations, 
+                and smooth user interactions that make a website feel alive.
+            </p>
+
+            <p class="about-description">
+                My focus is always on writing clean code, improving performance, 
+                and building designs that not only look good but also feel good for users. 
+                The more I learn, the better I create.
+            </p>
+
+            <a href="#" class="about-btn">Download CV</a>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- SKILLS SECTION -->
+<!-- Add Font Awesome in your <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<section id="skills" class="skills">
+  <div class="skills-container">
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-row">
+      <!-- HTML Skill -->
+      <div class="skill-card" data-percent="90">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+          <circle class="progress-ring__circle" stroke="#00aaff" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+        <div class="inside-circle">
+          <i class="fab fa-html5 logo"></i>
+          <span class="skill-name">HTML</span>
+          <span class="percent">0%</span>
+        </div>
+      </div>
+
+      <!-- CSS Skill -->
+      <div class="skill-card" data-percent="85">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+          <circle class="progress-ring__circle" stroke="#00aaff" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+        <div class="inside-circle">
+          <i class="fab fa-css3-alt logo"></i>
+          <span class="skill-name">CSS</span>
+          <span class="percent">0%</span>
+        </div>
+      </div>
+
+      <!-- UI/UX Skill -->
+      <div class="skill-card" data-percent="75">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+          <circle class="progress-ring__circle" stroke="#00aaff" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+        <div class="inside-circle">
+          <i class="fa-regular fa-object-ungroup logo"></i>
+          <span class="skill-name">UI/UX</span>
+          <span class="percent">0%</span>
+        </div>
+      </div>
+
+      <!-- Digital Marketing -->
+      <div class="skill-card" data-percent="80">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+          <circle class="progress-ring__circle" stroke="#00aaff" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+        <div class="inside-circle">
+          <i class="fa-solid fa-bullhorn logo"></i>
+          <span class="skill-name">Digital Marketing</span>
+          <span class="percent">0%</span>
+        </div>
+      </div>
+
+      <!-- Product Listing -->
+      <div class="skill-card" data-percent="70">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+          <circle class="progress-ring__circle" stroke="#00aaff" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+        <div class="inside-circle">
+          <i class="fa-solid fa-box-open logo"></i>
+          <span class="skill-name">Product Listing</span>
+          <span class="percent">0%</span>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="skill-card" data-percent="35">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+          <circle class="progress-ring__circle" stroke="#00aaff" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+        <div class="inside-circle">
+          <i class="fab fa-js logo"></i>
+          <span class="skill-name">JavaScript</span>
+          <span class="percent">0%</span>
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div class="skill-card" data-percent="35">
+        <svg class="progress-ring" width="160" height="160">
+          <circle class="progress-ring__circle-bg" stroke="#333" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+          <circle class="progress-ring__circle" stroke="#00aaff" stroke-width="8" fill="transparent" r="70" cx="80" cy="80"/>
+        </svg>
+        <div class="inside-circle">
+          <i class="fab fa-python logo"></i>
+          <span class="skill-name">Python</span>
+          <span class="percent">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Skill JS-->
+<script>
+document.querySelectorAll('.skill-card').forEach(card => {
+  const circle = card.querySelector('.progress-ring__circle');
+  const percentEl = card.querySelector('.percent');
+  const radius = circle.r.baseVal.value;
+  const circumference = 2 * Math.PI * radius;
+  circle.style.strokeDasharray = `${circumference}`;
+  circle.style.strokeDashoffset = circumference;
+
+  card.addEventListener('mouseenter', () => {
+    let percent = 0;
+    const target = parseInt(card.dataset.percent);
+    clearInterval(card.countInterval);
+
+    card.countInterval = setInterval(() => {
+      if (percent >= target) {
+        clearInterval(card.countInterval);
+      } else {
+        percent++;
+        percentEl.textContent = percent + "%";
+        const offset = circumference - (percent / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+      }
+    }, 15);
+  });
+
+  card.addEventListener('mouseleave', () => {
+    let percent = parseInt(percentEl.textContent);
+    clearInterval(card.countInterval);
+
+    card.countInterval = setInterval(() => {
+      if (percent <= 0) {
+        percent = 0;
+        percentEl.textContent = "0%";
+        circle.style.strokeDashoffset = circumference;
+        clearInterval(card.countInterval);
+      } else {
+        percent--;
+        percentEl.textContent = percent + "%";
+        const offset = circumference - (percent / 100) * circumference;
+        circle.style.strokeDashoffset = offset;
+      }
+    }, 10);
+  });
+});
+</script>
+
+
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="project-slider" id="slider">
+
+            <a href="#" class="project-card">TO-DO-TASK</a>
+            <a href="#" class="project-card">JUICE UI Design</a>
+            <a href="#" class="project-card">KiddoSpace</a>
+            <a href="#" class="project-card">Product Listing</a>
+            <a href="#" class="project-card">Tourist Guide App UI</a>
+            <a href="#" class="project-card">Wordpress</a>
+
+        </div>
+    </section>
+<script>
+const slider = document.getElementById("slider");
+const slides = Array.from(slider.children);
+const slideCount = slides.length;
+
+let scrollSpeed = 1; // Adjust speed
+
+// Clone all slides and append to make seamless loop
+slides.forEach(slide => {
+    slider.appendChild(slide.cloneNode(true));
+});
+
+function autoScroll() {
+    slider.scrollLeft += scrollSpeed;
+
+    // When scroll reaches original slides end, reset scrollLeft to start smoothly
+    if (slider.scrollLeft >= slider.scrollWidth / 2) {
+        slider.scrollLeft -= slider.scrollWidth / 2;
+    }
+}
+
+let scrollInterval = setInterval(autoScroll, 20);
+
+// Pause on hover
+slider.addEventListener("mouseenter", () => {
+    clearInterval(scrollInterval);
+});
+
+slider.addEventListener("mouseleave", () => {
+    scrollInterval = setInterval(autoScroll, 20);
+});
+</script>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <form action="https://formsubmit.co/mrongrowdro23@gmail.com" method="POST" class="contact-form">
+
+        <!-- Removes FormSubmit branding -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="form-group">
+            <input type="text" name="fname" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="lname" placeholder="Last Name" required>
+        </div>
+
+           <!-- COUNTRY + PHONE SIDE BY SIDE -->
+      <div class="phone-row">
+        <select name="country" class="country-select" required>
+            <option value="" disabled selected>Choose Country</option>
+            <option value="Bangladesh">🇧🇩 Bangladesh +880</option>
+            <option value="India">🇮🇳 India +91</option>
+            <option value="Pakistan">🇵🇰 Pakistan +92</option>
+            <option value="Nepal">🇳🇵 Nepal +977</option>
+            <option value="USA">🇺🇸 USA +1</option>
+            <option value="UK">🇬🇧 UK +44</option>
+            <option value="Canada">🇨🇦 Canada +1</option>
+            <option value="Australia">🇦🇺 Australia +61</option>
+            <option value="Germany">🇩🇪 Germany +49</option>
+            <option value="France">🇫🇷 France +33</option>
+        </select>
+
+        <input type="tel" name="phone" class="phone-input" placeholder="Phone Number" required>
+    </div>
+
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="form-group">
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="send-btn">Send Message</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h2 class="footer-logo">Rowdro</h2>
+            <p>Facebook Add Manager • UI/UX • Digital Marketing • Product Listing</p>
+        </div>
+        <div class="footer-center">
+            <h3>Quick Links</h3>
+            <ul>
+          
+          
+          
+              <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <h3>Follow Me</h3>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Rowdro. All rights reserved.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
