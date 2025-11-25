@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -19,7 +18,39 @@
             <li><a href="#about"><b>About</b></a></li>
             <li><a href="#contact"><b>Contact</b></a></li>
         </ul>
+          <!-- Hamburger icon -->
+   <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
     </nav>
+<!-- Hamburger JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector("nav ul");
+
+    // Toggle menu on hamburger click
+    hamburger.addEventListener("click", function () {
+        hamburger.classList.toggle("open");
+        navMenu.classList.toggle("active");
+    });
+
+    // Close menu when clicking any menu item
+    document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+            hamburger.classList.remove("open");
+        });
+    });
+
+});
+</script>
+
+
+
 
 <!-- HERO SECTION -->
 <section id="home" class="hero">
@@ -103,7 +134,7 @@
 
 <!-- SKILLS SECTION -->
 <!-- Add Font Awesome in your <head> -->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <section id="skills" class="skills">
   <div class="skills-container">
