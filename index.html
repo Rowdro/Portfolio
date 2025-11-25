@@ -92,7 +92,7 @@
                 The more I learn, the better I create.
             </p>
 
-            <a href="Files/My Resume.pdf" class="about-btn" download="MY Resume.pdf">Download CV</a>
+            <a href="My_Resume.pdf" class="about-btn" download="MY_Resume.pdf">Download CV</a>
         </div>
 
     </div>
@@ -255,52 +255,61 @@ document.querySelectorAll('.skill-card').forEach(card => {
 
 
     <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <h2 class="section-title">My Projects</h2>
+     <section id="projects" class="projects">
+    <h2 class="section-title">My Projects</h2> 
 
-        <div class="project-slider" id="slider">
 
-            <a href="#" class="project-card">TO-DO-TASK</a>
-            <a href="#" class="project-card">JUICE UI Design</a>
-            <a href="https://thekiddospacestore.com" class="project-card" >KiddoSpace Store Manage</a>
-            <a href="#" class="project-card">Product Listing</a>
-            <a href="#" class="project-card">Tourist Guide App UI</a>
-            <a href="#" class="project-card">Wordpress Theme Design</a>
+<div class="project-3d-container">
+    <div class="project-3d-carousel">
 
-        </div>
-    </section>
+        <a href="#" class="project-card">
+            <img src="To-do-task.png" class="project-img">
+            <span class="project-title">TO-DO-TASK</span>
+        </a>
+
+        <a href="#" class="project-card">
+            <img src="Juice.png" class="project-img">
+            <span class="project-title">JUICE UI Design</span>
+        </a>
+
+        <a href="https://thekiddospacestore.com" class="project-card">
+            <img src="kiddospace.webp" class="project-img">
+            <span class="project-title">KiddoSpace Store Manage</span>
+        </a>
+
+        <a href="#" class="project-card">
+            <img src="Product-listing.png" class="project-img">
+            <span class="project-title">Product Listing</span>
+        </a>
+
+        <a href="#" class="project-card">
+            <img src="tourist.png" class="project-img">
+            <span class="project-title">Tourist Guide UI Design</span>
+        </a>
+
+        <a href="#" class="project-card">
+            <img src="image/wordpress.jpg" class="project-img">
+            <span class="project-title">WordPress Theme Design</span>
+        </a>
+
+    </div>
+</div>
+
+
 <script>
-const slider = document.getElementById("slider");
-const slides = Array.from(slider.children);
-const slideCount = slides.length;
+const carousel = document.querySelector(".project-3d-carousel");
 
-let scrollSpeed = 1; // Adjust speed
-
-// Clone all slides and append to make seamless loop
-slides.forEach(slide => {
-    slider.appendChild(slide.cloneNode(true));
+// Pause animation on hover
+carousel.addEventListener("mouseenter", () => {
+    carousel.style.animationPlayState = "paused";
 });
 
-function autoScroll() {
-    slider.scrollLeft += scrollSpeed;
-
-    // When scroll reaches original slides end, reset scrollLeft to start smoothly
-    if (slider.scrollLeft >= slider.scrollWidth / 2) {
-        slider.scrollLeft -= slider.scrollWidth / 2;
-    }
-}
-
-let scrollInterval = setInterval(autoScroll, 20);
-
-// Pause on hover
-slider.addEventListener("mouseenter", () => {
-    clearInterval(scrollInterval);
-});
-
-slider.addEventListener("mouseleave", () => {
-    scrollInterval = setInterval(autoScroll, 20);
+// Resume animation on mouse leave
+carousel.addEventListener("mouseleave", () => {
+    carousel.style.animationPlayState = "running";
 });
 </script>
+
 
 
 <!-- CONTACT SECTION -->
