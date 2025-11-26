@@ -1304,66 +1304,67 @@ nav a.active {
   /* =====================
        3D PROJECTS
      ===================== */
-  .project-3d-container {
-      width: 100%;
-      height: 180px;
-      perspective: 700px;
-      margin: 15px 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: visible;
-      
-     
-  }
+/* FIXED — MOBILE 3D CONTAINER */
+.project-3d-container {
+    width: 100%;
+    height: 260px;                  /* bigger – prevents collapse */
+    perspective: 800px;
+    margin: 40px 0 60px 0;          /* extra space so it never touches contact */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    position: relative;             /* stable */
+}
 
-  .project-3d-carousel {
-      width: 100%;
-      height: 180px;
-      transform-style: preserve-3d;
-      animation: rotate3Dmobile 15s linear infinite;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
+/* FIXED — CAROUSEL NOW STAYS CENTERED */
+.project-3d-carousel {
+    width: 200px;                   /* fixed width: fixes left-right movement */
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate3Dmobile 18s linear infinite;
+    position: relative;
+    margin: 0 auto;                 /* center lock */
+}
 
-  @keyframes rotate3Dmobile {
-      from { transform: rotateY(0deg); }
-      to { transform: rotateY(-360deg); }
-  }
+/* SMOOTH CENTER ROTATION */
+@keyframes rotate3Dmobile {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+}
 
-  .project-3d-carousel .project-card {
-      width: 110px;
-      height: 150px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      background: #1a1a1a;
-      border: 2px solid #C27614;
-      border-radius: 10px;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 5px;
-      font-size: 12px;
-      text-align: center;
-      transform-style: preserve-3d;
-  }
+/* CARD STYLE (same as before) */
+.project-3d-carousel .project-card {
+    width: 130px;
+    height: 170px;
+    background: #1a1a1a;
+    border: 2px solid #C27614;
+    border-radius: 12px;
+    color: #fff;
+    position: absolute;
 
-  .project-3d-carousel .project-card span {
-      margin: 2px 0;
-      font-size: 12px;
-  }
+    /* CENTER LOCKED — NO LEFT/RIGHT GLITCH */
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%);
 
-  .project-3d-carousel .project-card:nth-child(1) { transform: rotateY(0deg) translateZ(120px) translate(-50%, -50%); }
-  .project-3d-carousel .project-card:nth-child(2) { transform: rotateY(60deg) translateZ(120px) translate(-50%, -50%); }
-  .project-3d-carousel .project-card:nth-child(3) { transform: rotateY(120deg) translateZ(120px) translate(-50%, -50%); }
-  .project-3d-carousel .project-card:nth-child(4) { transform: rotateY(180deg) translateZ(120px) translate(-50%, -50%); }
-  .project-3d-carousel .project-card:nth-child(5) { transform: rotateY(240deg) translateZ(120px) translate(-50%, -50%); }
-  .project-3d-carousel .project-card:nth-child(6) { transform: rotateY(300deg) translateZ(120px) translate(-50%, -50%); }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* FIXED POSITIONS — NO SIDE SHIFT ANYMORE */
+.project-3d-carousel .project-card:nth-child(1) { transform: translate(-50%, -50%) rotateY(0deg) translateZ(160px); }
+.project-3d-carousel .project-card:nth-child(2) { transform: translate(-50%, -50%) rotateY(60deg) translateZ(160px); }
+.project-3d-carousel .project-card:nth-child(3) { transform: translate(-50%, -50%) rotateY(120deg) translateZ(160px); }
+.project-3d-carousel .project-card:nth-child(4) { transform: translate(-50%, -50%) rotateY(180deg) translateZ(160px); }
+.project-3d-carousel .project-card:nth-child(5) { transform: translate(-50%, -50%) rotateY(240deg) translateZ(160px); }
+.project-3d-carousel .project-card:nth-child(6) { transform: translate(-50%, -50%) rotateY(300deg) translateZ(160px); }
 
   /* =====================
           FOOTER
@@ -1381,8 +1382,7 @@ nav a.active {
   #footer .footer-bottom {
       margin-top: 10px;
       font-size: 12px;
-      margin-bottom: 250px;
-  }
+      margin-bottom: 30px;
 
   /* #footer .footer-right{
     text-align: right;
@@ -1398,4 +1398,5 @@ nav a.active {
         max-width: 100% !important;
         width: 100% !important;
     }
+}
 }
