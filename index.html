@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <a href="https://x.com" target="_blank" class="social-icon x">
                     <i class=" fab fa-twitter"></i>
              </a>
-                <a href="https://github.com" target="_blank" class="social-icon gh">
+                <a href="https://github.com/Rowdro" target="_blank" class="social-icon gh">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -237,53 +237,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <!--Skill JS-->
 <script>
-document.querySelectorAll('.skill-card').forEach(card => {
-  const circle = card.querySelector('.progress-ring__circle');
-  const percentEl = card.querySelector('.percent');
-  const radius = circle.r.baseVal.value;
-  const circumference = 2 * Math.PI * radius;
-  circle.style.strokeDasharray = `${circumference}`;
-  circle.style.strokeDashoffset = circumference;
+document.addEventListener("DOMContentLoaded", () => {
+  const skillCards = document.querySelectorAll('.skill-card');
 
-  card.addEventListener('mouseenter', () => {
-    let percent = 0;
+  // Detect if mobile (you can adjust width if needed)
+  const isMobile = window.innerWidth <= 768;
+
+  skillCards.forEach(card => {
+    const circle = card.querySelector('.progress-ring__circle');
+    const percentEl = card.querySelector('.percent');
     const target = parseInt(card.dataset.percent);
-    clearInterval(card.countInterval);
 
-    card.countInterval = setInterval(() => {
-      if (percent >= target) {
+    const radius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * radius;
+
+    circle.style.strokeDasharray = `${circumference}`;
+    circle.style.strokeDashoffset = circumference;
+
+    // -----------------------------
+    // 📱 MOBILE ANIMATION – Auto Start
+    // -----------------------------
+    if (isMobile) {
+      let percent = 0;
+
+      const animate = setInterval(() => {
+        if (percent >= target) {
+          clearInterval(animate);
+        } else {
+          percent++;
+          percentEl.textContent = percent + "%";
+          const offset = circumference - (percent / 100) * circumference;
+          circle.style.strokeDashoffset = offset;
+        }
+      }, 15);
+    }
+
+    // -----------------------------
+    // 🖥️ PC ANIMATION – Start on Hover
+    // -----------------------------
+    else {
+      card.addEventListener('mouseenter', () => {
+        let percent = 0;
         clearInterval(card.countInterval);
-      } else {
-        percent++;
-        percentEl.textContent = percent + "%";
-        const offset = circumference - (percent / 100) * circumference;
-        circle.style.strokeDashoffset = offset;
-      }
-    }, 15);
-  });
 
-  card.addEventListener('mouseleave', () => {
-    let percent = parseInt(percentEl.textContent);
-    clearInterval(card.countInterval);
-
-    card.countInterval = setInterval(() => {
-      if (percent <= 0) {
-        percent = 0;
-        percentEl.textContent = "0%";
-        circle.style.strokeDashoffset = circumference;
-        clearInterval(card.countInterval);
-      } else {
-        percent--;
-        percentEl.textContent = percent + "%";
-        const offset = circumference - (percent / 100) * circumference;
-        circle.style.strokeDashoffset = offset;
-      }
-    }, 10);
+        card.countInterval = setInterval(() => {
+          if (percent >= target) {
+            clearInterval(card.countInterval);
+          } else {
+            percent++;
+            percentEl.textContent = percent + "%";
+            const offset = circumference - (percent / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+          }
+        }, 15);
+      });
+    }
   });
 });
 </script>
-
-
 
 
     <!-- PROJECTS -->
@@ -294,12 +305,12 @@ document.querySelectorAll('.skill-card').forEach(card => {
 <div class="project-3d-container">
     <div class="project-3d-carousel">
 
-        <a href="#" class="project-card">
+        <a href="https://rowdro.github.io/To-Do-Task-App/" class="project-card">
             <img src="To-do-task.png" class="project-img">
             <span class="project-title">TO-DO-TASK</span>
         </a>
 
-        <a href="#" class="project-card">
+        <a href="https://www.figma.com/proto/Uw5RPQwzIOFKO7wGtF7HsM/Project-2?node-id=1-203&t=AUxQKOY9pLizxxOg-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A127&show-proto-sidebar=1" class="project-card">
             <img src="Juice.png" class="project-img">
             <span class="project-title">JUICE UI Design</span>
         </a>
@@ -309,17 +320,17 @@ document.querySelectorAll('.skill-card').forEach(card => {
             <span class="project-title">KiddoSpace Store Manage</span>
         </a>
 
-        <a href="#" class="project-card">
+        <a href="https://chicmontreal.com/" class="project-card">
             <img src="Product-listing.png" class="project-img">
             <span class="project-title">Product Listing</span>
         </a>
 
-        <a href="#" class="project-card">
+        <a href="https://www.figma.com/proto/8LtH91JGbyfkIp4oIiOOXL/First-project?node-id=1-539&t=PdPQBkY367y7QtWq-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A539" class="project-card">
             <img src="tourist.png" class="project-img">
             <span class="project-title">Tourist Guide UI Design</span>
         </a>
 
-        <a href="#" class="project-card">
+        <a href="" class="project-card">
             <img src="image/wordpress.jpg" class="project-img">
             <span class="project-title">WordPress Theme Design</span>
         </a>
@@ -416,10 +427,10 @@ carousel.addEventListener("mouseleave", () => {
         <div class="footer-right">
             <h3>Follow Me</h3>
             <div class="social-icons">
-                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/rowdro.mrong.1" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/Rowdro" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </div>
